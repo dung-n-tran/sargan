@@ -1,4 +1,4 @@
-def send_file_via_email(email_subject, email_body, file_path, from_email="ozawamariajp@gmail.com", to_email="ozawamariajp@gmail.com"):
+def send_file_via_email(email_subject, email_body, file_path, from_email="ngocdungxyz@gmail.com", to_email="ngocdungxyz@gmail.com"):
 # Python code to illustrate Sending mail with attachments 
     # from your Gmail account 
 
