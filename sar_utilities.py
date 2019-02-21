@@ -182,3 +182,11 @@ def preprocess_test(img, cond, train_size, DOWNSAMPLE=False, downsample_factor=1
         downsampled_cond = cond
     
     return downsampled_img, downsampled_cond
+
+def rotate_by_90_degree(ori_img):
+    corrupted_imgs = []
+    for img in ori_img:
+        corrupted_imgs.append(np.transpose(img))
+    corrupted_imgs = np.asarray(corrupted_imgs)
+
+    return corrupted_imgs

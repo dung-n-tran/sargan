@@ -8,8 +8,11 @@ class Config:
     L1_lambda = 100
     save_per_epoch=1
     
-    trained_models_path = "/data/dung/sargan/trained_models"
-    output_path = "/data/dung/sargan/outputs"
+#    trained_models_path = "/home/grad3/hle/data/trained_models"
+    trained_models_path = "/scratch/hle/data/trained_models"
+
+#    output_path = "/home/grad3/hle/data/outputs"
+    output_path = "/scratch/hle/data/outputs"
     model_path_train = ""
 #     trained_models_path = "/data/dung/sargan/radarconf19_v3/trained_models"
 #     output_path = "/data/dung/sargan/radarconf19_v3/outputs"

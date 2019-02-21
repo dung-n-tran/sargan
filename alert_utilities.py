@@ -1,4 +1,4 @@
-def send_file_via_email(email_subject, email_body, file_path, from_email="ngocdungxyz@gmail.com", to_email="ngocdungxyz@gmail.com"):
+def send_file_via_email(email_subject, email_body, file_path, from_email="hieule246@gmail.com", to_email="hieule246@gmail.com"):
 # Python code to illustrate Sending mail with attachments 
     # from your Gmail account 
 
@@ -52,7 +52,7 @@ def send_file_via_email(email_subject, email_body, file_path, from_email="ngocdu
     s.starttls() 
 
     # Authentication 
-    s.login(from_email, "10179224") 
+    s.login(from_email, "") 
 
     # Converts the Multipart msg into a string 
     text = msg.as_string() 
@@ -113,7 +113,7 @@ def send_image_via_email(email_subject, email_body, image_file_path, from_email=
     s.starttls() 
 
     # Authentication 
-    s.login(from_email, "10179224") 
+    s.login(from_email, "") 
 
     # Converts the Multipart msg into a string 
     text = msg.as_string() 
@@ -124,7 +124,7 @@ def send_image_via_email(email_subject, email_body, image_file_path, from_email=
     # terminating the session 
     s.quit()     
     
-def send_images_via_email(email_subject, email_body, image_file_paths, sender_email="ozawamariajp@gmail.com", recipient_emails=["ozawamariajp@gmail.com"]):
+def send_images_via_email(email_subject, email_body, image_file_paths, sender_email="hieule246@gmail.com", recipient_emails=["hieule246@gmail.com"]):
     """
     Send image via email
     """
@@ -173,7 +173,7 @@ def send_images_via_email(email_subject, email_body, image_file_paths, sender_em
     s.starttls() 
 
     # Authentication 
-    s.login(sender_email, "10179224") 
+    s.login(sender_email, "") 
 
     # Converts the Multipart msg into a string 
     text = msg.as_string() 
