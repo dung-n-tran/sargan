@@ -84,7 +84,7 @@ experiment_name = "mnist_images_corrupted_by_center_mask"
 
 output_path = os.path.join(conf.output_path, experiment_name)
 print("OUTPUT PATH: {}".format(output_path))
-
+NOISE_RANGE = [0.4,0.6]
 
 ori_color = color_palette[1]
 corrupted_color = color_palette[0]
@@ -146,14 +146,10 @@ def main(args):
                 img = reshape_batch_img[0]
                 cond = img.copy()
                 #cond = np.transpose(cond)
-                #cond = add_gaussian_noise(cond, sd=0.15)
-                #mask = np.zeros(img.shape, dtype = "uint8")
-                #mask.fill(255)
-                mask_size = random.choice(mask_sizes)
-                left_corner_index = random.choice(left_corner_indices)
-                #cv2.rectangle(mask, (left_corner_index, left_corner_index), (left_corner_index + mask_size, left_corner_index + mask_size), (0, 0, 0), -1)
-                #cond = cv2.bitwise_and(cond, cond, mask = mask)
-                cond[left_corner_index : left_corner_index + mask_size, left_corner_index : left_corner_index + mask_size] = 0
+                cond = add_gaussian_noise(cond, sd=np.random.uniform(NOISE_RANGE[0], NOISE_RANGE[1]))
+                #mask_size = random.choice(mask_sizes)
+                #left_corner_index = random.choice(left_corner_indices)
+                #cond[left_corner_index : left_corner_index + mask_size, left_corner_index : left_corner_index + mask_size] = 0
                 img = img.reshape(1, 784)
                 cond = cond.reshape(1,784)
                 img, cond = preprocess_train(img, cond, (28, 28), DOWNSAMPLE, downsample_factor)                
@@ -181,16 +177,12 @@ def main(args):
                     img = reshape_batch_img[0]
                     cond = img.copy()
                     #cond = np.transpose(cond)
-                    #cond = add_gaussian_noise(cond, sd=0.15)
-                    #mask = np.zeros(img.shape, dtype = "uint8")
-                    #mask.fill(255)
-                    mask_size = random.choice(mask_sizes)
-                    left_corner_index = random.choice(left_corner_indices)
-                    #cv2.rectangle(mask, (left_corner_index, left_corner_index), (left_corner_index + mask_size, left_corner_index + mask_size), (0, 0, 0), -1)
-                    #cond = cv2.bitwise_and(cond, cond, mask = mask)
+                    cond = add_gaussian_noise(cond, sd=np.random.uniform(NOISE_RANGE[0], NOISE_RANGE[1]))
+                    #mask_size = random.choice(mask_sizes)
+                    #left_corner_index = random.choice(left_corner_indices)
 
 
-                    cond[left_corner_index : left_corner_index + mask_size, left_corner_index : left_corner_index + mask_size] = 0
+                    #cond[left_corner_index : left_corner_index + mask_size, left_corner_index : left_corner_index + mask_size] = 0
 
                     img = img.reshape(1, 784)
                     pcond = cond.reshape(1,784)
@@ -258,16 +250,12 @@ def main(args):
                 img = reshape_batch_img[0]
                 cond = img.copy()
                 #cond = np.transpose(cond)
-                #cond = add_gaussian_noise(cond, sd=0.15)
-                #mask = np.zeros(img.shape, dtype = "uint8")
-                #mask.fill(255)
-                mask_size = random.choice(mask_sizes)
-                left_corner_index = random.choice(left_corner_indices)
-                #cv2.rectangle(mask, (left_corner_index, left_corner_index), (left_corner_index + mask_size, left_corner_index + mask_size), (0, 0, 0), -1)
-                #cond = cv2.bitwise_and(cond, cond, mask = mask)
+                cond = add_gaussian_noise(cond, sd=np.random.uniform(NOISE_RANGE[0], NOISE_RANGE[1]))
+                #mask_size = random.choice(mask_sizes)
+                #left_corner_index = random.choice(left_corner_indices)
 
 
-                cond[left_corner_index : left_corner_index + mask_size, left_corner_index : left_corner_index + mask_size] = 0
+                #cond[left_corner_index : left_corner_index + mask_size, left_corner_index : left_corner_index + mask_size] = 0
 
 
                 img = img.reshape(1, 784)
